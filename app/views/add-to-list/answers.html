@@ -1,0 +1,93 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% set benefitCount = data['benefitList'] | length %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="#" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+        Check your answers
+      </h1>
+
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="heading-medium">
+        State benefits
+      </h2>
+
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `cya-questions-short` for short questions -->
+      <!--   * `cya-questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+
+{% for benefitName in data['benefitList'] %}
+
+<div>
+    <dd class="cya-answer">
+        {{ benefitName}}
+    </dd>
+    <dd class="cya-change">
+      <a href="#">Change<span class="visually-hidden"> benefit</span></a>
+      &nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;
+      <a href="#">Remove<span class="visually-hidden"> benefit</span></a>
+    </dd>
+  </div>
+  
+  {% endfor %}
+
+
+      </dl>
+
+
+      <h2 class="heading-medium">Do you get another benefit?</h2>
+
+      <form method="get" action="addanother-handler" class="form">
+
+          <div class="form-group">
+
+            <fieldset class="inline">
+              <legend class="visually-hidden">
+              </legend>
+
+              <div class="multiple-choice">
+                <input id="yes" type="radio" name="addanother" value="yes">
+                <label for="yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="no" type="radio" name="addanother" value="no">
+                <label for="no">No</label>
+              </div>
+
+          </fieldset>  
+
+          </div>
+
+          <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+
+        </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

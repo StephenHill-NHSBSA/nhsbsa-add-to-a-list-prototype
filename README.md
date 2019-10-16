@@ -1,18 +1,12 @@
-# NHSBSA prototype template
+# NHSBSA - 'Add to a list' prototype
 
+## About
 
-## About the prototype kit
+This prototype uses the NHS BSA prototype kit (an adapted version of the GOV.UK prototype kit) to recreate the 'Add to a list' pattern most commonly used by [HMRC](http://hmrc.github.io/assets-frontend/patterns/add-to-a-list/index.html).
 
-This prototype is an adapted version of the GOV.UK prototype kit. It provides a simple way to make interactive prototypes which can be used to show ideas to people you work with, and to do user research.
+## Warning
 
-## Design guidance
-
-Follow further advice from GOV.UK
-https://www.gov.uk/service-manual/design
-
-## Security
-
-If you publish your prototypes online, they **must** be protected by a [username and password](https://govuk-prototype-kit.herokuapp.com/docs/publishing-on-heroku). This is to prevent members of the public finding prototypes and thinking they are real services.
+The code used in this example was created by a designer! Therefore it should not go anywhere near production! :)
 
 ## Installation instructions
 
